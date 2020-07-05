@@ -22,10 +22,10 @@ namespace apbd_test_retake
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SomeDbContext>(options =>
+            services.AddDbContext<FireBrigadeDbContext>(options =>
                 options.UseNpgsql(Configuration["dbConnectionString"])
             );
-            services.AddScoped<ISomeDbService, NpgsqlSomeDbService>();
+            services.AddScoped<IFireBrigadeDbService, NpgsqlFireBrigadeDbService>();
             services.AddSwaggerGen(config =>
                 config.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" })
             );
