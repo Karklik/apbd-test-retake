@@ -13,9 +13,9 @@ namespace apbd_test_retake.Services
 
         public FireTruckAction AddFireTruckAction(FireTruckAction fireTruckAction)
         {
-            var doctorEntity = context.FireTruckActions.Add(fireTruckAction);
+            var fireTruckActionEntity = context.FireTruckActions.Add(fireTruckAction);
             if (context.SaveChanges() > 0)
-                return doctorEntity.Entity;
+                return fireTruckActionEntity.Entity;
             else
                 return null;
         }
